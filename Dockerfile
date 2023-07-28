@@ -2,7 +2,7 @@
 EXPOSE 3000
 
 # Set working directory
-WORKDIR /
+WORKDIR /app
 
 # Copy package.json and package-lock.json to working directory
 COPY package*.json ./
