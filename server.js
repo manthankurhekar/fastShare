@@ -35,6 +35,7 @@ app.use('/files/download', require('./routes/download'));
 
 app.get('/', async (req, res) => {
       // const ans = await File.deleteMany({});
+      console.log(__dirname);
       res.sendFile(path.join(__dirname+'/index.html'));
 });
 
