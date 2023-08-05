@@ -28,6 +28,10 @@ dropZone.addEventListener("drop", (e) => {
       }
 });
 
+fileInput.addEventListener("change", () => {
+      uploadFile();
+});
+
 browseBtn.addEventListener("click", () => {
       fileInput.click();
 });
@@ -36,12 +40,20 @@ const uploadFile = () => {
       const file = fileInput.files[0];
       const formData = new FormData();
       formData.append("myfile", file);
-      const xhr = new XMLHttpRequest();
 
+      const xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => {
-            if(xhr.readyState);
+            if(xhr.readyState === XMLHttpRequest.DONE) {
+                  console.log(xhr.response);
+            }
       };
+
+      xhr.upload.onprogress = updateProgress;
 
       xhr.open("POST", uploadURL);
       xhr.send(formData);
+};
+
+const updateProgress = (e) => {
+      console.log(e);
 };
