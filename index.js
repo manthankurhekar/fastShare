@@ -22,8 +22,8 @@ dropZone.addEventListener("dragleave", () => {
 });
 
 dropZone.addEventListener("drop", (e) => {
-      console.log(e);
       e.preventDefault();
+      console.log(e.dataTransfer.files.length);
       dropZone.classList.remove("dragged");
       // logic add karna baki h if file dragged dropped then upload nahi hoga
 });

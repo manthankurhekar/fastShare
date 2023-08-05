@@ -12,7 +12,6 @@ const storage = multer.diskStorage({
       }
 });
 
-
 const upload = multer({
       storage: storage, 
       limit: {
@@ -22,7 +21,6 @@ const upload = multer({
 // ye single ke bad ka thoda dhyan dena
 
 router.post('/', (req, res) => {
-
       upload(req, res, async (err) => {
             if(!req.file) {
                   return res.json({ error: "File Not Found."});
