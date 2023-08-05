@@ -36,14 +36,14 @@ app.use('/files/download', require('./routes/download'));
 app.get('/', async (req, res) => {
       // const ans = await File.deleteMany({});
       // console.log(__dirname);
-      const testFolder = './';
-      const fs = require('fs');
+      // const testFolder = './';
+      // const fs = require('fs');
       
-      fs.readdir(testFolder, (err, files) => {
-        files.forEach(file => {
-          console.log(file);
-        });
-      });
+      // fs.readdir(testFolder, (err, files) => {
+      //   files.forEach(file => {
+      //     console.log(file);
+      //   });
+      // });
 
       res.sendFile(path.join(__dirname+'/public/index.html'));
 });
