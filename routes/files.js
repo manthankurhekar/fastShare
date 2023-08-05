@@ -45,6 +45,7 @@ router.post('/', (req, res) => {
 router.post('/send', async (req, res) => {
       // frontend se uuid, emailFrom, emailTo ane wala h 
       const { uuid, emailTo } = req.body;
+      console.log(req.body);
       emailFrom = "ShubhChintak@gmail.com";
       if(!uuid || !emailTo || !emailFrom) {
             return res.status(422).send({error: "All fields required! "});
