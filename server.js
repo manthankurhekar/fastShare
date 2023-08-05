@@ -8,12 +8,6 @@ const File = require('./models/file');
 
 dbConnection();
 
-// console.log("hello");
-
-// https://tanshare.onrender.com
- 
-// console.log(path.resolve("./database"));
-
 const corsOptions = {
       "origin": "*",
       "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -34,23 +28,13 @@ app.use('/files', require('./routes/show'));
 app.use('/files/download', require('./routes/download'));
 
 app.get('/', async (req, res) => {
-      // const ans = await File.deleteMany({});
-      // console.log(__dirname);
-      // const testFolder = './';
-      // const fs = require('fs');
-      
-      // fs.readdir(testFolder, (err, files) => {
-      //   files.forEach(file => {
-      //     console.log(file);
-      //   });
-      // });
-
       res.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
 // ye madarchod ke wajah se problem aa raha tha 127.0.0.1 dal raha tha main
-app.listen(3000, (err) => {
+app.listen(3000, async (err) => {
       if(!err) {
+            const ans = await File.deleteMany({});
             console.log("Server listening at PORT 3000!");
       }
 });
