@@ -45,7 +45,7 @@ app.get('/', async (req, res) => {
         });
       });
 
-      res.sendFile(path.join(__dirname+'/index.html'));
+      res.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
 // ye madarchod ke wajah se problem aa raha tha 127.0.0.1 dal raha tha main
