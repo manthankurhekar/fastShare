@@ -1,13 +1,9 @@
 const dropZone = document.querySelector('.drop-zone');
-// console.log(dropZone);
 const browseBtn = document.querySelector('.browseBtn');
 const fileInput = document.querySelector('#fileinput');
 
-// dropZone.addEventListener("dragstart", (e) => {
-//       // console.log("Hello!");
-//       e.dataTransfer.effectAllowed = "all";
-//       console.log(e.dataTransfer.effectAllowed);      
-// });
+const host = "http://tanshare.onrender.com";
+const uploadURL = `${host}/api/files`;
 
 dropZone.addEventListener("dragover", (e) => {  
       e.preventDefault();
@@ -23,9 +19,13 @@ dropZone.addEventListener("dragleave", () => {
 
 dropZone.addEventListener("drop", (e) => {
       e.preventDefault();
-      console.log(e.dataTransfer.files.length);
       dropZone.classList.remove("dragged");
-      // logic add karna baki h if file dragged dropped then upload nahi hoga
+      const files = e.dataTransfer.files;
+      console.log(files);
+      if(files.length) {
+            fileInput.files = files;
+            uploadFile();
+      }
 });
 
 browseBtn.addEventListener("click", () => {
@@ -33,5 +33,15 @@ browseBtn.addEventListener("click", () => {
 });
 
 const uploadFile = () => {
-             
+      const file = fileInput.files[0];
+      const formData = new FormData();
+      formData.append("myfile", file);
+      const xhr = new XMLHttpRequest();
+
+      xhr.onreadystatechange = () => {
+            if(xhr.readyState);
+      };
+
+      xhr.open("POST", uploadURL);
+      xhr.send(formData);
 };

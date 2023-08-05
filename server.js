@@ -15,7 +15,7 @@ dbConnection();
 // console.log(path.resolve("./database"));
 
 const corsOptions = {
-      origin: process.env.ALLOWED_CILENTS.split(',')
+      origin: 'http://localhost:3000'
 };    
 
 app.set('view engine', 'ejs');
@@ -30,7 +30,7 @@ app.use('/files', require('./routes/show'));
 app.use('/files/download', require('./routes/download'));
 
 app.get('/', async (req, res) => {
-      // const ans = await File.deleteMany({});      
+      const ans = await File.deleteMany({});
       res.send('Hello there Mate! Just believe in yourself and do it');
 });
 
