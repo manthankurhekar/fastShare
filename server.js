@@ -35,7 +35,7 @@ app.use('/files/download', require('./routes/download'));
 
 app.get('/', async (req, res) => {
       // const ans = await File.deleteMany({});
-      res.sendFile('/index.html');
+      res.sendFile(path.join(__dirname+'/index.html'));
 });
 
 // ye madarchod ke wajah se problem aa raha tha 127.0.0.1 dal raha tha main
