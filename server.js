@@ -33,6 +33,7 @@ app.get('/', (req, res) => {
       res.send('Hello there Mate! Just believe in yourself and do it');
 });
 
+// ye madarchod ke wajah se problem aa raha tha 127.0.0.1 dal raha tha main
 app.listen(3000, (err) => {
       if(!err) {
             console.log("Server listening at PORT 3000!");
