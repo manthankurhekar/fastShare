@@ -15,8 +15,9 @@ dbConnection();
 // console.log(path.resolve("./database"));
 
 const corsOptions = {
-      origin: 'http://127.0.0.1:3000'
+      origin: 'http://127.0.0.1:3000/'
 };    
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
