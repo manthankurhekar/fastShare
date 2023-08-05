@@ -28,7 +28,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static('public'));
+// app.use(express.static('public'));
 app.use('/api/files', require('./routes/files'));
 app.use('/files', require('./routes/show'));
 app.use('/files/download', require('./routes/download'));
