@@ -15,14 +15,17 @@ dbConnection();
 // console.log(path.resolve("./database"));
 
 const corsOptions = {
-      origin: 'http://127.0.0.1:3000/'
-};    
-
+      "origin": "*",
+      "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+      "preflightContinue": false,
+      "optionsSuccessStatus": 204
+}
+    
+app.use(cors(corsOptions))
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
-app.use(cors(corsOptions));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('public'));
