@@ -34,7 +34,7 @@ app.get('/', async (req, res) => {
 // ye madarchod ke wajah se problem aa raha tha 127.0.0.1 dal raha tha main
 app.listen(3000, async (err) => {
       if(!err) {
-            const ans = await File.deleteMany({});
+            // const ans = await File.deleteMany({});
             console.log("Server listening at PORT 3000!");
       }
 });
