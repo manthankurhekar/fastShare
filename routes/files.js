@@ -60,7 +60,7 @@ router.post('/send', async (req, res) => {
       sendMail({
             from: emailFrom, 
             to: emailTo,
-            subject: 'fastShare',
+            subject: 'tanShare',
             text: `${emailFrom} shared file with you.`,
             html: require('../services/emailTemplate')({
                   emailFrom: emailFrom, 
