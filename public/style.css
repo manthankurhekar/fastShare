@@ -54,6 +54,8 @@
     }
     
     /* will be added when user drags */
+
+
     .drop-zone.dragged {
       background: var(--main-bg-color);
       border-color: #0288d1;
@@ -105,6 +107,8 @@
     }
     
     /* uploading progress styles */
+
+
     .progress-container {
       border: 2px solid var(--main-bg-color);
       width: var(--container-width);
@@ -150,6 +154,8 @@
     }
     
     /* sharing container style */
+
+    
     .sharing-container {
       margin-bottom: 25px;
       width: var(--container-width);
@@ -279,3 +285,4 @@
         width: 300px;
       }
     }
+
