@@ -54,13 +54,13 @@ router.post('/send', async (req, res) => {
       // email firse bhejna check nahi kiya
       file.sender = emailFrom;
       file.receiver = emailTo;
-      const response = await filesave();
+      const response = await file.save();
 
       const sendMail = require('../services/emailService')
       sendMail({
             from: emailFrom, 
             to: emailTo,
-            subject: 'tanShare',
+            subject: 'fastShare',
             text: `${emailFrom} shared file with you.`,
             html: require('../services/emailTemplate')({
                   emailFrom: emailFrom, 
